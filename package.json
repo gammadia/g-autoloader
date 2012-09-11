@@ -1,0 +1,19 @@
+{
+  "name": "g-autoloader",
+  "version": "0.0.1",
+  "description": "Chargeur automatique pour les composants. Chargement pro actif ou à la demande.",
+  "main": "index.js",
+  "repository": {
+    "type":         "svn",
+    "url":          "svn+ssh://www.gammadia-svn.net/var/svn/gammadia/node_modules/g-autoloader/trunk/"
+  },
+  "publishConfig": {
+    "registry":     "http://npm.gammadia.ch/"
+  },
+  "engines": {
+    "node":         ">=0.8.0"
+  },
+  "dependencies": {
+    "walk":         "2.2.x"
+  }
+}
