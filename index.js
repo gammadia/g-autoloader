@@ -112,8 +112,7 @@ module.exports = function (options) {
 		 *	@param callback Callback de fin de chargement
 		 */
 		loadFiles = function (callback) {
-			var walk = require('walk'),
-				walker = walk.walk(path);
+			var walker = require('walk').walk(path);
 
 			walker.on('file', function (root, fileStats, next) {
 				root = root.replace(path, '');
@@ -122,7 +121,10 @@ module.exports = function (options) {
 					root = root + '/';
 				}
 
-				get(root + fileStats.name);
+				if (fileStats.name.match(/\.js$/)) {
+					get(root + fileStats.name);
+				}
+
 				next();
 			});
 
