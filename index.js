@@ -53,7 +53,9 @@ module.exports = function (options) {
 			}
 
 			if (error === true || !stat.isDirectory()) {
-				logger.fatal("Impossible d'ouvrir le dossier des composants (%s) ", composants_path);
+				if (logger) {
+					logger.fatal("Impossible d'ouvrir le dossier des composants (%s) ", composants_path);
+				}
 				return new Error({code: 'COMPOSANT_PATH_NOT_FOUND'});
 			}
 
@@ -75,15 +77,19 @@ module.exports = function (options) {
 		fetch = function (file) {
 			var composant = {};
 
-			logger.debug('Chargement du composant %s', file);
+			if (logger) {
+				logger.debug('Chargement du composant %s', file);
+			}
 
 			try {
 				composant = require(path + file)(imports);
 			} catch (err) {
-				if (err.code === 'MODULE_NOT_FOUND') {
-					logger.warn('Composant %s non trouvé (%s)', file, path + file);
-				} else {
-					logger.error({err: err}, 'Erreur inconnue au chargement du composant %s (%s)', file, path + file);
+				if (logger) {
+					if (err.code === 'MODULE_NOT_FOUND') {
+						logger.warn('Composant %s non trouvé (%s)', file, path + file);
+					} else {
+						logger.error({err: err}, 'Erreur inconnue au chargement du composant %s (%s)', file, path + file);
+					}
 				}
 
 				return new Error({code: 'COMPOSANT_NOT_FOUND'});
