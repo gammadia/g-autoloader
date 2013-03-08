@@ -1,4 +1,4 @@
-/*jslint node: true, stupid: true */
+/*jslint node: true, stupid: true, white: true */
 /**
  *	Module autoloader, chargement automatiques de composants avec cache.
  *	Chaque appel génère un nouvel autoloader.
