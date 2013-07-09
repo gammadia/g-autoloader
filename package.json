@@ -1,6 +1,6 @@
 {
   "name": "g-autoloader",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Chargeur automatique pour les composants. Chargement pro actif ou à la demande.",
   "main": "index.js",
   "repository": {

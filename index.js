@@ -86,7 +86,7 @@ module.exports = function (options) {
 			} catch (err) {
 				if (logger) {
 					if (err.code === 'MODULE_NOT_FOUND') {
-						logger.warn('Composant %s non trouvé (%s)', file, path + file);
+						logger.warn({err: err}, 'Composant %s non trouvé (%s)', file, path + file);
 					} else {
 						logger.error({err: err}, 'Erreur inconnue au chargement du composant %s (%s)', file, path + file);
 					}
