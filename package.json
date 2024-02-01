@@ -1,11 +1,11 @@
 {
   "name": "g-autoloader",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Chargeur automatique pour les composants. Chargement pro actif ou à la demande.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "ssh://git@stash.gammadia.ch:7999/nodmod/g-autoloader.git"
+    "url": "ssh://git@github.com:tipee-sa/g-autoloader.git"
   },
   "license": "UNLICENSED",
   "private": true,
